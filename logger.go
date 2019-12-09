@@ -38,6 +38,16 @@ type DefaultLeveledLogger struct {
 	info   *log.Logger
 	warn   *log.Logger
 	err    *log.Logger
+	fileName string
+}
+
+func (ll *DefaultLeveledLogger) SetFileName(fileName string) *DefaultLeveledLogger {
+	ll.fileName = fileName
+	return ll
+}
+
+func (ll *DefaultLeveledLogger) GetFileName() string {
+	return ll.fileName
 }
 
 // WithTraceLogger is a chainable configuration function which sets the
@@ -80,6 +90,13 @@ func (ll *DefaultLeveledLogger) WithErrorLogger(log *log.Logger) *DefaultLeveled
 func (ll *DefaultLeveledLogger) WithOutput(output io.Writer) *DefaultLeveledLogger {
 	ll.writer.SetOutput(output)
 	return ll
+}
+func checkFileIsExist(filename string) bool {
+	var exist = true
+	if _, err := os.Stat(filename); os.IsNotExist(err) {
+		exist = false
+	}
+	return exist
 }
 
 func (ll *DefaultLeveledLogger) logf(logger *log.Logger, level LogLevel, format string, args ...interface{}) {
