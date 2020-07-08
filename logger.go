@@ -1,3 +1,4 @@
+// Package logging provides the logging library used by Pion
 package logging
 
 import (
@@ -41,15 +42,6 @@ type DefaultLeveledLogger struct {
 	fileName string
 }
 
-func (ll *DefaultLeveledLogger) SetFileName(fileName string) *DefaultLeveledLogger {
-	ll.fileName = fileName
-	return ll
-}
-
-func (ll *DefaultLeveledLogger) GetFileName() string {
-	return ll.fileName
-}
-
 // WithTraceLogger is a chainable configuration function which sets the
 // Trace-level logger
 func (ll *DefaultLeveledLogger) WithTraceLogger(log *log.Logger) *DefaultLeveledLogger {
@@ -90,13 +82,6 @@ func (ll *DefaultLeveledLogger) WithErrorLogger(log *log.Logger) *DefaultLeveled
 func (ll *DefaultLeveledLogger) WithOutput(output io.Writer) *DefaultLeveledLogger {
 	ll.writer.SetOutput(output)
 	return ll
-}
-func checkFileIsExist(filename string) bool {
-	var exist = true
-	if _, err := os.Stat(filename); os.IsNotExist(err) {
-		exist = false
-	}
-	return exist
 }
 
 func (ll *DefaultLeveledLogger) logf(logger *log.Logger, level LogLevel, format string, args ...interface{}) {
@@ -242,4 +227,23 @@ func (f *DefaultLoggerFactory) NewLogger(scope string) LeveledLogger {
 		}
 	}
 	return NewDefaultLeveledLoggerForScope(scope, logLevel, f.Writer)
+}
+
+//miaobinwei
+func (ll *DefaultLeveledLogger) SetFileName(fileName string) *DefaultLeveledLogger {
+	ll.fileName = fileName
+	return ll
+}
+
+func (ll *DefaultLeveledLogger) GetFileName() string {
+	return ll.fileName
+}
+
+
+func checkFileIsExist(filename string) bool {
+	var exist = true
+	if _, err := os.Stat(filename); os.IsNotExist(err) {
+		exist = false
+	}
+	return exist
 }

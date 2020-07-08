@@ -8,9 +8,9 @@
   <a href="https://pion.ly"><img src="https://img.shields.io/badge/pion-logging-gray.svg?longCache=true&colorB=brightgreen" alt="Pion transport"></a>
   <a href="http://gophers.slack.com/messages/pion"><img src="https://img.shields.io/badge/join-us%20on%20slack-gray.svg?longCache=true&logo=slack&colorB=brightgreen" alt="Slack Widget"></a>
   <br>
-  <a href="https://travis-ci.org/pion/logging"><img src="https://travis-ci.org/pion/logging.svg?branch=master" alt="Build Status"></a>
-  <a href="https://godoc.org/github.com/mudutv/logging"><img src="https://godoc.org/github.com/mudutv/logging?status.svg" alt="GoDoc"></a>
-  <a href="https://codecov.io/gh/pion/logging"><img src="https://codecov.io/gh/pion/logging/branch/master/graph/badge.svg" alt="Coverage Status"></a>
+  <a href="https://travis-ci.org/mudutv/logging"><img src="https://travis-ci.org/mudutv/logging.svg?branch=master" alt="Build Status"></a>
+  <a href="https://pkg.go.dev/github.com/mudutv/logging"><img src="https://godoc.org/github.com/mudutv/logging?status.svg" alt="GoDoc"></a>
+  <a href="https://codecov.io/gh/mudutv/logging"><img src="https://codecov.io/gh/mudutv/logging/branch/master/graph/badge.svg" alt="Coverage Status"></a>
   <a href="https://goreportcard.com/report/github.com/mudutv/logging"><img src="https://goreportcard.com/badge/github.com/mudutv/logging" alt="Go Report Card"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
 </p>
@@ -36,6 +36,7 @@ Check out the **[contributing wiki](https://github.com/mudutv/webrtc/wiki/Contri
 * [Michiel De Backker](https://github.com/backkem) - *Docs*
 * [Hugo Arregui](https://github.com/hugoArregui) - *Custom Logs*
 * [Justin Okamoto](https://github.com/justinokamoto) - *Disabled Logs Update*
+* [Atsushi Watanabe](https://github.com/at-wat) - *Fix/update CI*
 
 ### License
 MIT License - see [LICENSE](LICENSE) for full text
